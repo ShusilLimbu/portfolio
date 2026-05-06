@@ -5,6 +5,8 @@ on:
     - cron: '4 17 * * *'
   pull_request:
     types: [opened,reopened]
+  issues:
+    types: [opened, closed]
 jobs:
   build:
     runs-on: ubuntu-latest
