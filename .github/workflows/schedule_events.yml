@@ -7,11 +7,31 @@ on:
     types: [opened,reopened]
   issues:
     types: [opened, closed]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Deploy to which environment"
+        default: "dev"
+        required: true
+        type: 'choice'
+        options:
+          - staging
+          - production
+          - dev
+      debug:
+        description: "Enable Debug"
+        type: boolean
+        default: false
+        required: false
+      version:
+        description: "Version to Deploy"
+        required: false
+        type: string
+
+        
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        run: action/checkout@v4
       - name: Run Script
         run: echo "Hello, Scheduled Workflow!"
