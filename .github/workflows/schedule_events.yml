@@ -35,3 +35,10 @@ jobs:
     steps:
       - name: Run Script
         run: echo "Hello, Scheduled Workflow!"
+      - name: Print Inputs
+        run: |
+          echo "Environment: ${{ github.event.inputs.environment }}"
+          echo "Debug : ${{ github.event.inputs.debug }}"
+          echo "Version: ${{ github.event.inputs.version}}"
+        
+
