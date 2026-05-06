@@ -1,0 +1,19 @@
+name: Multile Events
+
+on:
+  push:
+    branches:
+        - main
+  issues:
+    types: [opened]
+  pull_request:
+    types: [opened ,reopened]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        run: action/checkout@v4
+      - name: Run Script
+        run: echo "Hello Friends, I am from Run Script"
