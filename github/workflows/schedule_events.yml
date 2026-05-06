@@ -1,0 +1,13 @@
+name: Schedule Events in GitHub Actions
+
+on:
+  schedule:
+    - cron: */1 * * * *
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        run: action/checkout@v4
+      - name: Run Script
+        run: echo "Hello, Scheduled Workflow!"
