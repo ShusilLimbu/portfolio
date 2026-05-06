@@ -2,7 +2,7 @@ name: Schedule Events in GitHub Actions
 
 on:
   schedule:
-    - cron: */1 * * * *
+    - cron: '*/1 * * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
